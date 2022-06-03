@@ -31,10 +31,13 @@
         const memberId = document.getElementById("memberId").value;
         const checkResult = document.getElementById("dup-check-result");
         $.ajax({
-            type:"post",
-            url:"/member/duplicate-check",
+            type:"post", <%-- Mapping 타입 get 이냐 post 이느냐  --%>
+            url:"/member/duplicate-check",<%-- 리턴값을 받을 Mapping이름 --%>
             data:{"memberId":memberId},
-            dataType:"text",
+            <%-- $.ajax의 데이터가 담기는 과정: <input type="text" onblur="duplicateCheck()" id="memberId" name="memberId" placeholder="아이디">
+               ===>  const memberId = document.getElementById("memberId").value; ==> data:{"memberId":memberId},
+ --%>
+            dataType:"text", <%-- 데이타타입 : text --%>
             success:function (result) {
                 if (result == "ok") {
                     checkResult.innerHTML = "슨상 사용가능한 아이디랑께~"

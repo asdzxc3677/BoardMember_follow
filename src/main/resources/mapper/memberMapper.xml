@@ -12,5 +12,13 @@
         select memberId from member_follow where memberId=#{memberId}
     </select>
 
+    <select id="login" parameterType="member" resultType="member">
+        select * from member_follow where memberId=#{memberId} and memberPassword=#{memberPassword}
+    </select>
+
+    <select id="findAll" resultType="member">
+        select * from member_follow
+    </select>
+
 
 </mapper>

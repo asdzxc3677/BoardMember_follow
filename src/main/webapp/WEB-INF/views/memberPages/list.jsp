@@ -20,14 +20,14 @@
     <div class="container">
         <table class="table">
             <tr>
-                <th>회원번호</th>
-                <th>아이디</th>
-                <th>비번</th>
-                <th>이름</th>
-                <th>나이</th>
-                <th>폰번호</th>
-                <th>상세조회(ajax)</th>
-                <th>삭제</th>
+                <th>Number</th>
+                <th>Id</th>
+                <th>Pw</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Phone</th>
+                <th>Datail(ajax)</th>
+                <th>Delete</th>
             </tr>
             <c:forEach items="${memberList}" var="member">
                 <tr>
@@ -37,7 +37,7 @@
                     <td>${member.memberName}</td>
                     <td>${member.memberAge}</td>
                     <td>${member.memberPhone}</td>
-                    <td><button class="btn btn-outline-info" onclick="detailByAjax('${member.id}">조회</button></td>
+                    <td><button class="btn btn-outline-info" onclick="detailByAjax('${member.id}')">조회</button></td>
                     <td><a href="/member/delete?id=${member.id}">삭제</a></td>
                 </tr>
             </c:forEach>

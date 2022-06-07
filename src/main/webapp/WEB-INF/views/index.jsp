@@ -19,7 +19,6 @@
 
 <a href ="/member/save-form">회원가입</a>
 <a href="/member/login-form">로그인 하라</a> <br> <%-- 잠시 인덱스로 띄움 --%>
-<a href="/member/findAll">신상정보 </a> <br> <%-- 잠시 인덱스로 띄움 --%>
 
 </body>
 </html>

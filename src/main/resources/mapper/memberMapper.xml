@@ -20,5 +20,9 @@
         select * from member_follow
     </select>
 
+    <select id="findById" parameterType="Long" resultType="member">
+        select * from member_follow where id=#{id}
+    </select>
+
 
 </mapper>

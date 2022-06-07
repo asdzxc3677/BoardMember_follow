@@ -61,10 +61,35 @@ public class MemberController {
         }
     }
 
-    @GetMapping("findAll") //회원정보
+    @GetMapping("/logout") //로그아웃 처리
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "index";
+    }
+
+    @GetMapping("findAll") //관리자용 모든 회원 개인정보
     public String findAll(Model model){
         List<MemberDTO> memberDTOList = memberService.findAll();
         model.addAttribute("memberList",memberDTOList);
         return "memberPages/list";
     }
+
+
+
+    @GetMapping("/detail-ajax") //ajax로 처리한 상세조회
+    public @ResponseBody MemberDTO findByIdAjax(@RequestParam("id") Long id){
+        System.out.println("id = " + id);
+        MemberDTO memberDTO = memberService.findById(id);
+        return memberDTO;
+    }
+
+    @GetMapping("/detail") // 개인정보
+    public String detail(HttpSession session,Model model){
+        Long id = (Long) session.getAttribute("id");
+        MemberDTO memberDTO = memberService.findById(id);
+        model.addAttribute("member",memberDTO);
+        return "memberPages/detail";
+    }
+
+
 }

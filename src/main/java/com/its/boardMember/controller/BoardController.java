@@ -4,6 +4,7 @@ import com.its.boardMember.service.BoardService;
 import com.its.boardMember.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -15,4 +16,9 @@ public class BoardController {
 
     @Autowired
     private CommentService commentService;
+
+    @PostMapping("/saveFile")
+    public String saveFileForm(){
+        return "boardPages/saveFile";
+    }
 }

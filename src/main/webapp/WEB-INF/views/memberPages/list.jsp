@@ -38,7 +38,7 @@
                     <td>${member.memberAge}</td>
                     <td>${member.memberPhone}</td>
                     <td><button class="btn btn-outline-info" onclick="detailByAjax('${member.id}')">조회</button></td>
-                    <td><a href="/member/delete?id=${member.id}">삭제</a></td>
+                    <td><a href="/member/delete?id=${member.id}">추방</a></td>
                 </tr>
             </c:forEach>
         </table>

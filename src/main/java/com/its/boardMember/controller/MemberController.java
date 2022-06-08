@@ -83,13 +83,44 @@ public class MemberController {
         return memberDTO;
     }
 
-    @GetMapping("/detail") // 개인정보
+    @GetMapping("/detail") // 개인신상정보
     public String detail(HttpSession session,Model model){
         Long id = (Long) session.getAttribute("id");
         MemberDTO memberDTO = memberService.findById(id);
         model.addAttribute("member",memberDTO);
         return "memberPages/detail";
     }
+
+    @GetMapping("/delete") //회원삭제 처리
+    public String delete(@RequestParam("id")Long id){
+        System.out.println("id = " + id);
+        boolean deleteResult = memberService.delete(id);
+        if (deleteResult){
+            return "redirect:/member/findAll";
+        }else {
+            return "delete-fail";
+        }
+    }
+
+    @GetMapping("/update-form") //회원수정을 위해 회원정보 받는 문법
+    public String updateForm(HttpSession session, Model model){
+        Long updateId = (Long) session.getAttribute("id");
+        System.out.println("updateId=" + updateId);
+        MemberDTO memberDTO = memberService.findById(updateId);
+        model.addAttribute("updateMember",memberDTO);
+        return "memberPages/update";
+    }
+
+    @PostMapping("/update") // 회원수정 처리
+    public String update(@ModelAttribute MemberDTO memberDTO){
+        boolean updateResult = memberService.update(memberDTO);
+        if (updateResult){
+            return "redirect:/member/detail"; // 개인회원 수정처리 했을때 detail 로 보낸다.
+        }else {
+            return "memberPages/udate-fail";
+        }
+    }
+
 
 
 }

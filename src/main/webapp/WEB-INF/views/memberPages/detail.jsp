@@ -14,7 +14,8 @@
 </head>
 <body>
 
-<h2>내정보 datail.jsp</h2>
+<h2>내정보 detail.jsp</h2>
+<a href="/">index 시작페이지로 이동</a><br>
 <div class="container">
     <table class="table">
         <tr>
@@ -35,7 +36,7 @@
                 <td>${member.memberAge}</td>
                 <td>${member.memberPhone}</td>
                 <td><button class="btn btn-outline-info" onclick="update()">정보수정</button></td>
-                <td><a href="/member/delete?id=${member.id}">탈퇴</a></td>
+                <td><button class="btn btn-primary" id="delete" onclick="deleteMember()">탈주</button></td>
             </tr>
     </table>
     <div id="detail"></div>
@@ -44,6 +45,16 @@
 <script>
     function update() {
         location.href="/member/update-form"
+    }
+    function deleteMember(){
+        let result = confirm("진짜로 갈끄냐잉") <%--confirm 확인창 띄어준다 --%>
+        const memberId = "${member.id}";
+        if (result){
+            location.href="/member/delete?id=" + memberId;
+            alert("슨상 언제든 다시오쇼 섭섭하네잉")
+        }else {
+            alert("잘 선택했소 슨상")
+        }
     }
 </script>
 </html>

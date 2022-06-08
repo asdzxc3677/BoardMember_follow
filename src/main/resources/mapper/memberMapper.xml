@@ -24,5 +24,13 @@
         select * from member_follow where id=#{id}
     </select>
 
+    <delete id="delete" parameterType="Long">
+        delete from member_follow where id=#{id}
+    </delete>
+
+    <update id="update" parameterType="member">
+        update member_follow set memberName=#{memberName},memberAge=#{memberAge},memberPhone=#{memberPhone} where id=#{id}
+    </update>
+
 
 </mapper>

@@ -20,7 +20,10 @@
         <form action="/board/saveFile" method="post" enctype="multipart/form-data">
             <input class="" type="text" name="boardTitle" placeholder="제목"><br>
             <input class="" type="text" name="boardWriter" value="${sessionScope.loginId}" readonly><br>
-
+            <input class="" type="text" name="boardPassword" placeholder="비번"><br>
+            <textarea class="" name="boardContents" rows="10" cols="20" placeholder="내용"></textarea> <%-- rows="5" 5줄까지 쓸수 있는 문법 --%>
+            첨부파일:<input type="file" name="boardFile">
+            <input class=""  type="submit" value="글작성하쇼 이상한글 싸지르지 말고">
         </form>
     </div>
 

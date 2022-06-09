@@ -37,4 +37,17 @@ public class BoardRepository {
     public BoardDTO findById(Long id) { //상세정보 보기
         return sql.selectOne("Board.findById",id);
     }
+
+    public void delete(Long id) { //글삭제
+        sql.delete("Board.delete",id);
+    }
+
+
+    public void update(BoardDTO boardDTO) { //글수정
+        sql.update("Board.update",boardDTO);
+    }
+
+    public List<BoardDTO> search(Map<String, String> searchParam) { //검색처리
+        return sql.selectList("Board.search",searchParam);
+    }
 }

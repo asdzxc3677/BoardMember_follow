@@ -15,9 +15,9 @@ public class MemberRepository {
 
     public int save(MemberDTO memberDTO) {
         return sql.insert("Member.save",memberDTO);
-    }
+    } //회원가입
 
-    public String duplicateCheck(String memberId) {
+    public String duplicateCheck(String memberId) { // 아이디 중복체크
         return sql.selectOne("Member.duplicate",memberId);
     }
 

@@ -11,23 +11,31 @@
     <title>Title</title>
     <script src="/resources/js/jquery.js"></script>
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+    <style>
+        .container{
+            max-width: 500px;
+        }
+    </style>
 </head>
 <body>
-<jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
-<h2>회원가입 하쇼잉</h2>
-<div class="container">
-    <form action="/member/save" method="post">
-        계정:<input type="text" onblur="duplicateCheck()" id="memberId" name="memberId" placeholder="아이디"><br>
-        <p id="dup-check-result"></p>
-        비번:<input type="text" id="memberPassword" name="memberPassword" placeholder="비번"><br>
-        이름:<input type="text" id="memberName" name="memberName" placeholder="이름"><br>
-        나이:<input type="text" id="memberAge" name="memberAge" placeholder="나이"><br>
-        폰번호: <input type="text" id="memberPhone" name="memberPhone" placeholder="폰번호">
-            <input type="submit" value="회원가입">
 
-    </form>
+<div class="container">
+    <h1 class="display-4 fw-normal">슨상들 회원가입 save.jsp</h1>
+    <div class="py-5 text-center">
+
+        <from action ="/member/save" method="post">
+            <input type="text" class="form-control mb-2" onclick="" id="memberId" name="memberId" placeholder="아이디"><br>
+            <p id="dup-check-result"></p>
+            <input type="password" class="form-control mb-2" id="memberPassword" name="memberPassword" placeholder="비번"><br>
+            <input type="text" class="form-control mb-2" id="memberName" name="memberName" placeholder="이름"><br>
+            <input type="text" class="form-control mb-2" id="memberAge" name="memberAge" placeholder="나이"><br>
+            <input type="text" class="form-control mb-2" id="memberPhone" name="memberPhone" placeholder="핸드폰"><br>
+            <input type="submit" value="회원가입">
+        </from>
+    </div>
 </div>
 </body>
+
 <script> <%-- 아이디중복체크 --%>
     const duplicateCheck = () => {
         const memberId = document.getElementById("memberId").value;

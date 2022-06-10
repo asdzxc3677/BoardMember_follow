@@ -13,7 +13,7 @@ public class MemberService {
     @Autowired
     private MemberRepository memberRepository;
 
-    public boolean save(MemberDTO memberDTO) {
+    public boolean save(MemberDTO memberDTO) { //회원가입
         int saveResult = memberRepository.save(memberDTO);
         if(saveResult > 0){
             return true;
@@ -22,7 +22,7 @@ public class MemberService {
         }
     }
 
-    public String duplicateCheck(String memberId) {
+    public String duplicateCheck(String memberId) { //아이디 중복체크
         String checkResult = memberRepository.duplicateCheck(memberId);
         if(checkResult == null){
             return "ok";

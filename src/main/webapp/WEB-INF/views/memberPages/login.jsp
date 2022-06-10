@@ -9,9 +9,10 @@
 <html>
 <head>
     <title>Title</title>
-
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 </head>
 <body>
+<jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
     <h2>슨상 로그인하쇼</h2>
     <form action="/member/login" method="post">
         <input type="text" name="memberId" placeholder="아이디">

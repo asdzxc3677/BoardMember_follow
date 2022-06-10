@@ -11,7 +11,7 @@
 <html>
 <head>
     <title>Title</title>
-
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <style>
@@ -22,7 +22,7 @@
 
 </head>
 <body>
-
+<jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
 <div class="container">
     <h2>상세조회 detail.jsp</h2>
     <table class="table">

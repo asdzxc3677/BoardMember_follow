@@ -12,10 +12,10 @@
 <html>
 <head>
     <title>Title</title>
-
+    <link rel ="stylesheet" href="/resources/css/bootstrap.min.css">
 </head>
 <body>
-
+<jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
 <h2>슨상들 글도배 페이지 list.jsp</h2>
 <table class="container">
     <tr class="Table">

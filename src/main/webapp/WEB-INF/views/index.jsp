@@ -11,14 +11,14 @@
 <html>
 <head>
     <title>Title</title>
-
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 </head>
 <body>
-
+<jsp:include page="./layout/header.jsp" flush="false"></jsp:include>
 <h1>신안드레스에 오신걸 환영합니다 index.jsp</h1>
-
-<a href ="/member/save-form">우선 회원가입 하시고</a><br>
-<a href="/member/login-form">그리고 로그인 하시고</a> <br> <%-- 잠시 인덱스로 띄움 --%>
+<c:if test="${sessionScope.loginId ==null}">
+<a href ="/member/save-form">슨상 회원가입 하쇼잉</a><br>
+</c:if>
 
 </body>
 </html>

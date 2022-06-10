@@ -11,10 +11,10 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
-@RequestMapping("/member")
+@RequestMapping("/member") //컨트룰러에 있는 모든 메서드들을 찿아주는 역할
 public class MemberController {
 
-    @Autowired
+    @Autowired //의존성을 줄여주는 역할하는 객체
     private MemberService memberService;
 
     @GetMapping("/save-form") //회원가입 페이지 출력
@@ -55,7 +55,7 @@ public class MemberController {
             model.addAttribute("loginMember",loginMember);
             session.setAttribute("loginId",loginMember.getMemberId());
             session.setAttribute("id",loginMember.getId());
-            return "memberPages/main"; // 훗날 "redirect:/board/paging"; 으로 이동 "redirect: Mapping 주소로 이동하는 명령어
+            return "redirect:/board/paging"; // 훗날 "redirect:/board/paging"; 으로 이동 "redirect: Mapping 주소로 이동하는 명령어
         }else {
             return "memberPages/login";
         }

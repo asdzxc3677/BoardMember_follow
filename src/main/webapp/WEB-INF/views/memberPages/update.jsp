@@ -9,10 +9,10 @@
 <html>
 <head>
     <title>Title</title>
-
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 </head>
 <body>
-
+<jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
 <h2>슨상님들 수정처리할곳 update.jsp</h2>
 <form action="/member/update" method="post" name="updateForm">
     번호:<input type="text" name="id" value="${updateMember.id}" readonly><br>

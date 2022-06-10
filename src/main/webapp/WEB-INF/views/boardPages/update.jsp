@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-
+<jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
 <h2>슨상들 수정처리 update.jsp</h2>
 <form action="/board/update" method="post" name="updateForm">
     <input type="text" name="id" value="${boardUpdate.id}" class="" readonly><br>

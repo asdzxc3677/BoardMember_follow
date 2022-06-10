@@ -11,10 +11,10 @@
 <head>
     <title>Title</title>
     <script src="/resources/js/jquery.js"></script>
-
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 </head>
 <body>
-
+<jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
     <h2>슨상님들 회원정보 list.jsp </h2> <%-- 훗날 관리자 전용 페이지로 이동 --%>
     <a href="/">시작페이지로 이동</a><br>
     <div class="container">

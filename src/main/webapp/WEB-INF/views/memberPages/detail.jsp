@@ -9,11 +9,11 @@
 <html>
 <head>
     <title>Title</title>
-
+    <link rel="stylesheet" href="../../../resources/css/bootstrap.min.css">
     <script src="/resources/js/jquery.js"></script>
 </head>
 <body>
-
+<jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
 <h2>내정보 detail.jsp</h2>
 <a href="/">index 시작페이지로 이동</a><br>
 <div class="container">

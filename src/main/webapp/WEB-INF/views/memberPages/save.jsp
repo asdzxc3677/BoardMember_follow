@@ -10,8 +10,10 @@
 <head>
     <title>Title</title>
     <script src="/resources/js/jquery.js"></script>
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 </head>
 <body>
+<jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
 <h2>회원가입 하쇼잉</h2>
 <div class="container">
     <form action="/member/save" method="post">

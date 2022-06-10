@@ -24,7 +24,7 @@ public class BoardService {
         String boardFileName = boardFile.getOriginalFilename();
         boardFileName = System.currentTimeMillis() + "_" + boardFileName;
         boardDTO.setBoardFileName(boardFileName);
-        String savePath = "D:\\string_img\\" + boardFileName;
+        String savePath = "D:\\spring_img\\" + boardFileName;
         if (!boardFile.isEmpty()){
             boardFile.transferTo(new File(savePath));
         }

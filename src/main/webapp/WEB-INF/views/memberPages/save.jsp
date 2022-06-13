@@ -23,7 +23,7 @@
     <h1 class="display-4 fw-normal">슨상들 회원가입 save.jsp</h1>
     <div class="py-5 text-center">
 
-        <from action ="/member/save" method="post">
+        <form action ="/member/save" method="post">
             <input type="text" class="form-control mb-2" onblur="duplicateCheck()" id="memberId" name="memberId" placeholder="아이디"><br>
             <p id="dup-check-result"></p>
             <input type="password" class="form-control mb-2" id="memberPassword" name="memberPassword" placeholder="비번"><br>
@@ -31,7 +31,7 @@
             <input type="text" class="form-control mb-2" id="memberAge" name="memberAge" placeholder="나이"><br>
             <input type="text" class="form-control mb-2" id="memberPhone" name="memberPhone" placeholder="핸드폰"><br>
             <input type="submit" value="회원가입">
-        </from>
+        </form>
     </div>
 </div>
 </body>

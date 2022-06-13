@@ -19,15 +19,15 @@ public class MemberRepository {
 
     public String duplicateCheck(String memberId) { // 아이디 중복체크
         return sql.selectOne("Member.duplicate",memberId);
-    }
+    } //아이디 중복체크
 
     public MemberDTO login(MemberDTO memberDTO) {
         return sql.selectOne("Member.login",memberDTO);
-    }
+    } //로그인
 
     public List<MemberDTO> findAll() {
         return sql.selectList("Member.findAll");
-    }
+    } //관리자용 회원정보
 
     public MemberDTO findById(Long id) {
         return sql.selectOne("Member.findById",id);

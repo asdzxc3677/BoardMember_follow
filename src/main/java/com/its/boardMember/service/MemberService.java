@@ -31,14 +31,14 @@ public class MemberService {
         }
     }
 
-    public MemberDTO login(MemberDTO memberDTO) {
+    public MemberDTO login(MemberDTO memberDTO) { //로그인
         MemberDTO loginMember = memberRepository.login(memberDTO);
         return loginMember;
     }
 
     public List<MemberDTO> findAll() {
         return memberRepository.findAll();
-    }
+    } //관리자용 회원정보
 
     public MemberDTO findById(Long id) {
         return memberRepository.findById(id);

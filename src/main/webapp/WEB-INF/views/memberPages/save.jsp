@@ -24,7 +24,7 @@
     <div class="py-5 text-center">
 
         <from action ="/member/save" method="post">
-            <input type="text" class="form-control mb-2" onclick="" id="memberId" name="memberId" placeholder="아이디"><br>
+            <input type="text" class="form-control mb-2" onblur="duplicateCheck()" id="memberId" name="memberId" placeholder="아이디"><br>
             <p id="dup-check-result"></p>
             <input type="password" class="form-control mb-2" id="memberPassword" name="memberPassword" placeholder="비번"><br>
             <input type="text" class="form-control mb-2" id="memberName" name="memberName" placeholder="이름"><br>
@@ -53,7 +53,7 @@
                     checkResult.innerHTML = "슨상 사용가능한 아이디랑께~"
                     checkResult.style.color = "green";
                 } else {
-                    checkResult.innerHTML = "아야~ 슨상 이미사용한 아이디잖어 제데로 확인하그라~ 알긋냐"
+                    checkResult.innerHTML = "아야~ 슨상 이미사용한 아이디잖어 똑바로 확인하그라~ 알긋냐"
                     checkResult.style.color = "red";
                 }
             },

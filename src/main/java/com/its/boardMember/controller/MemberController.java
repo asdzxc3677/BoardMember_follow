@@ -51,10 +51,10 @@ public class MemberController {
         System.out.println("컨트롤러 디티오"+memberDTO);
         MemberDTO loginMember = memberService.login(memberDTO);
         System.out.println("컨트롤러"+loginMember);
-        if (loginMember != null){
-            model.addAttribute("loginMember",loginMember);
-            session.setAttribute("loginId",loginMember.getMemberId());
-            session.setAttribute("id",loginMember.getId());
+        if (loginMember != null){ // 로그인 되었을때 (로그인이 비워있는 값이 아닐때)
+            model.addAttribute("loginMember",loginMember); // model.addAttribute 는 가로안에 로그인 맴버의 정보를 가져간다는 내용
+            session.setAttribute("loginId",loginMember.getMemberId()); // session.setAttribute 로그인한 값을 session 통해서 모든페이지를 쓸수 있다.
+            session.setAttribute("id",loginMember.getId()); // 아이디를 session 통해서 모든페이지에 적용시킬수 있다.
             return "redirect:/board/paging"; // 훗날 "redirect:/board/paging"; 으로 이동 "redirect: Mapping 주소로 이동하는 명령어
         }else {
             return "memberPages/login";

@@ -43,11 +43,11 @@
 </div>
 </body>
 <script>
-    function update() {
+    function update() { <%-- 개인 회원수정 처리--%>
         location.href="/member/update-form"
     }
-    function deleteMember(){
-        let result = confirm("진짜로 갈끄냐잉") <%--confirm 확인창 띄어준다 --%>
+    function deleteMember(){ <%-- 개인 회원탈퇴 할때 확인용도 처리 --%>
+        let result = confirm("진짜로 갈끄냐잉") <%--confirm 확인창 띄어준다 메서드 --%>
         const memberId = "${member.id}";
         if (result){
             location.href="/member/delete?id=" + memberId;

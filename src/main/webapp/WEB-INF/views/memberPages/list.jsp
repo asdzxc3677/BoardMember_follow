@@ -48,7 +48,7 @@
     </div>
 </body>
 <script>
-    const detailByAjax = (id) => {
+    const detailByAjax = (id) => { <%-- ajax 상세조회 --%>
         console.log(id);
         const detail = document.getElementById("detail");
         $.ajax({

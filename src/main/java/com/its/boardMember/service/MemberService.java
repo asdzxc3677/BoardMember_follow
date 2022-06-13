@@ -42,7 +42,7 @@ public class MemberService {
 
     public MemberDTO findById(Long id) {
         return memberRepository.findById(id);
-    }
+    } //ajax로 처리된 상세조회
 
     public boolean delete(Long id) {
         int deleteResult = memberRepository.delete(id);

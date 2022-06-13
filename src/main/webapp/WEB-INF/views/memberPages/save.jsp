@@ -42,7 +42,7 @@
         const checkResult = document.getElementById("dup-check-result");
         $.ajax({
             type:"post", <%-- Mapping 타입 get 이냐 post 이느냐  --%>
-            url:"/member/duplicate-check",<%-- 리턴값을 받을 Mapping이름 --%>
+            url:"/member/duplicate-check",<%-- 리턴값을 받을 Mapping이름(주소값) Mapping : 컨트룰러를 찿아가는 주소값 --%>
             data:{"memberId":memberId},
             <%-- $.ajax의 데이터가 담기는 과정: <input type="text" onblur="duplicateCheck()" id="memberId" name="memberId" placeholder="아이디">
                ===>  const memberId = document.getElementById("memberId").value; ==> data:{"memberId":memberId},

@@ -31,7 +31,7 @@ public class MemberRepository {
 
     public MemberDTO findById(Long id) {
         return sql.selectOne("Member.findById",id);
-    }
+    } // ajax로 처리된 상세조회
 
     public int delete(Long id) {
         return sql.delete("Member.delete",id);

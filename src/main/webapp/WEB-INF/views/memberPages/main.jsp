@@ -23,7 +23,7 @@
     <c:if test="${sessionScope.loginMemberId eq 'admin'}">
         <a href="/findAll">관리자전용 회원목록</a>
     </c:if>
-    <c:if test="${sessionScope.loginId == 'admin'}"> <%-- 관리자만 보일수 있게 처리 --%>
+    <c:if test="${sessionScope.loginId eq 'admin'}"> <%-- 관리자만 보일수 있게 처리 --%>
         <button type="button" class="btn btn-warning" onclick="memberList()">회원정보</button>
     </c:if>
         <button type="button" class="btn btn btn-warning" onclick="logout()">로그아웃</button>

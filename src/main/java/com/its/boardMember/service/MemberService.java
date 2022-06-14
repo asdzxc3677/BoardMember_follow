@@ -44,7 +44,7 @@ public class MemberService {
         return memberRepository.findById(id);
     } //ajax로 처리된 상세조회
 
-    public boolean delete(Long id) {
+    public boolean delete(Long id) { //관리자용 회원삭제 처리
         int deleteResult = memberRepository.delete(id);
         if(deleteResult > 0){
             return true;

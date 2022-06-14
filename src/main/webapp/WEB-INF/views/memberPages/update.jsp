@@ -13,7 +13,7 @@
 </head>
 <body>
 <jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
-<h2>슨상님들 수정처리할곳 update.jsp</h2>
+<h2>슨상님들(개인회원) 수정처리할곳 update.jsp</h2>
 <form action="/member/update" method="post" name="updateForm">
     번호:<input type="text" name="id" value="${updateMember.id}" readonly><br>
     계정:<input type="text" name="memberId" value="${updateMember.memberId}" readonly><br>

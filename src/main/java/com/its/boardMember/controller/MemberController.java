@@ -91,7 +91,7 @@ public class MemberController {
         return "memberPages/detail";
     }
 
-    @GetMapping("/delete") //회원삭제 처리
+    @GetMapping("/delete") //관리자가 회원삭제 처리
     public String delete(@RequestParam("id")Long id){
         System.out.println("id = " + id);
         boolean deleteResult = memberService.delete(id);
@@ -102,7 +102,7 @@ public class MemberController {
         }
     }
 
-    @GetMapping("/update-form") //회원수정을 위해 회원정보 받는 문법
+    @GetMapping("/update-form") //회원수정을 위해 회원정보 창 띄우기
     public String updateForm(HttpSession session, Model model){
         Long updateId = (Long) session.getAttribute("id");
         System.out.println("updateId=" + updateId);
@@ -117,7 +117,7 @@ public class MemberController {
         if (updateResult){
             return "redirect:/member/detail"; // 개인회원 수정처리 했을때 detail 로 보낸다.
         }else {
-            return "memberPages/udate-fail";
+            return "memberPages/update-fail";
         }
     }
 

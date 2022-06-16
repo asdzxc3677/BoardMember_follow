@@ -19,7 +19,7 @@ public class BoardService {
     @Autowired
     private BoardRepository boardRepository;
 
-    public void saveFile(BoardDTO boardDTO) throws IOException {
+    public void saveFile(BoardDTO boardDTO) throws IOException { //파일첨부 및 글작성 처리 문법
         MultipartFile boardFile = boardDTO.getBoardFile();
         String boardFileName = boardFile.getOriginalFilename();
         boardFileName = System.currentTimeMillis() + "_" + boardFileName;

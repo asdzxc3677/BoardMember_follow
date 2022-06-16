@@ -72,7 +72,7 @@ public class BoardController {
     @GetMapping("/delete") //글 삭제 처리
     public String delete(@RequestParam("id") Long id){
         boardService.delete(id);
-        return "redirect:/board/findAll";
+        return "boardPages/pagingList";
     }
 
     @GetMapping("/update") //수정화면 요청

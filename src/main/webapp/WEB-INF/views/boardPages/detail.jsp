@@ -45,11 +45,11 @@
             <td>${board.boardHits} </td>
             <img src="${pageContext.request.contextPath}/upload/${board.boardFileName}"
                  alt="" height="100" width="100">
-            <c:if test="${sessionScope.loginId =='admin'}">
+            <c:if test="${sessionScope.loginId =='admin'}"> <%-- 관라자만 수정 삭제 할수 있게 처리 --%>
                 <td><button onclick="boardUpdate()">수정</button></td>
                 <td><button onclick="boardDelete()">삭제</button></td>
             </c:if>
-            <c:if test="${board.boardWriter == sessionScope.loginId}">
+            <c:if test="${board.boardWriter == sessionScope.loginId}"> <%-- 본인아이디만 수정 삭제 할수 있게 처리 --%>
                 <td><button onclick="boardUpdate()">수정</button></td>
                 <td><button onclick="boardDelete()">삭제</button></td>
             </c:if>
@@ -70,7 +70,7 @@
         </div>
         <button id="comment-write-btn" class="btn btn-primary">댓글작성</button>
 
-    </div> <%-- 여기까지  --%>
+    </div>
 
     <div id="comment-list">
         <table class="table">

@@ -16,7 +16,7 @@ public class BoardRepository {
 
     public void saveFile(BoardDTO boardDTO) {
         sql.insert("Board.saveFile",boardDTO);
-    }
+    } //파일첨부 글작성
 
     public List<BoardDTO> findAll() {
         return sql.selectList("Board.findAll");

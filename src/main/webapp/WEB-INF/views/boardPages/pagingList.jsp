@@ -28,7 +28,7 @@
     </form>
 </div>
 
-<div class="container">
+<div class="container"> <%-- 글목록 띄어주는? 아리까리함 --%>
     <table class="table">
         <tr>
             <th>글번호</th>
@@ -38,7 +38,7 @@
             <th>조회수</th>
         </tr>
         <c:forEach items="${boardList}" var="board">
-            <%-- 글번호,글제목,작성자,작성날짜,조회수 등등 DTO필드 하나씩 띄우는 추력해주는 작업  --%>
+            <%-- forEach를 써서 글번호,글제목,작성자,작성날짜,조회수 등등 DTO필드 하나씩 띄우는 출력해주는 작업  --%>
             <tr>
                 <td>${board.id}</td>
                 <td>${board.boardWriter}</td>
@@ -50,11 +50,12 @@
         </c:forEach>
     </table>
 </div>
+
 <div class="container"> <%-- 페지징 처리하는 작업 문법 --%>
     <ul class="pagination justify-content-center">
         <c:choose>
             <%-- 현재페이지가 1페이지면 이전 글자만 보여줌 --%>
-            <c:when test="${paging.page<=1}"> <%-- if와 동일 --%>
+            <c:when test="${paging.page<=1}"> <%-- if와 동일 <c:choose> <c:when> 한셋트 --%>
                 <li class="page-item disabled">
                     <a class="page-link">[이전]</a>
                 </li>
@@ -86,7 +87,7 @@
             </c:choose>
         </c:forEach>
 
-        <c:choose>
+        <c:choose> <%-- 다음페이지 요청하는 조건식 --%>
             <c:when test="${paging.page>=paging.maxPage}">
                 <li class="page-item disabled">
                     <a class="page-link">[다음]</a>

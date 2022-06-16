@@ -24,4 +24,5 @@ public class CommentRepository {
     public List<CommentDTO> delete(Long boardId) {
         return sql.selectList("Comment.delete",boardId);
     }
+    //댓글삭제
 }

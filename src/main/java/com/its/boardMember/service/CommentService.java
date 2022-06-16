@@ -24,5 +24,5 @@ public class CommentService {
 
     public List<CommentDTO> delete(Long boardId) { //댓글삭제
         return commentRepository.delete(boardId);
-    }
+    } //댓글삭제
 }

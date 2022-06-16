@@ -72,7 +72,7 @@ public class BoardService {
 
     public void delete(Long id) { //글삭제 처리
         boardRepository.delete(id);
-    }
+    } //글 삭제(댓글삭제 포함)
 
 
     public void update(BoardDTO boardDTO) { //수정처리

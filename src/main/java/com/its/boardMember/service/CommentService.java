@@ -19,7 +19,7 @@ public class CommentService {
 
     public void save(CommentDTO commentDTO) { //댓글등록
         commentRepository.save(commentDTO);
-    }
+    } //댓글등록
 
 
     public List<CommentDTO> delete(Long boardId) { //댓글삭제

@@ -52,10 +52,10 @@
         console.log(id);
         const detail = document.getElementById("detail");
         $.ajax({
-            type:"get",
-            url:"detail-ajax",
-            data:{"id":id},
-            dataType:"json",
+            type:"get", <%-- Mapping 타입 get 이냐 post 인가  --%>
+            url:"detail-ajax", <%-- url 의미 주소값 --%>
+            data:{"id":id}, <%-- 서버로 넘겨줄 파라미터 --%>
+            dataType:"json", <%-- 데이터 타입 : json  --%>
             success:function (result){
                 let output = "<table class='table'>";
                 output += "<tr>" +

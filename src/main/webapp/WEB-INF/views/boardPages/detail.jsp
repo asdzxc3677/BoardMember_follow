@@ -49,7 +49,7 @@
                 <td><button onclick="boardUpdate()">수정</button></td>
                 <td><button onclick="boardDelete()">삭제</button></td>
             </c:if>
-            <c:if test="${board.boardWriter == sessionScope.loginId}"> <%-- 본인아이디만 수정 삭제 할수 있게 처리 --%>
+            <c:if test="${board.boardWriter == sessionScope.loginId}"> <%-- 개인이 로그인 했을때에만 수정,삭제처리 --%>
                 <td><button onclick="boardUpdate()">수정</button></td>
                 <td><button onclick="boardDelete()">삭제</button></td>
             </c:if>
@@ -72,7 +72,7 @@
 
     </div>
 
-    <div id="comment-list">
+    <div id="comment-list"> <%-- 댓글목록및 개인댓글삭제 및 관리자용삭제 기능 --%>
         <table class="table">
             <tr>
                 <th>댓글번호</th>
@@ -87,11 +87,11 @@
                     <td>${comment.commentWriter}</td>
                     <td>${comment.commentContents}</td>
                     <td><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss" value="${comment.commentCreatedDate}"></fmt:formatDate></td>
-                    <c:if test="${sessionScope.loginId =='admin'}">
+                    <c:if test="${sessionScope.loginId =='admin'}"> <%-- 관리자만 삭제할수 있게 처리 --%>
                         <td><button onclick="commentDelete('${comment.id}')">삭제</button></td>
                     </c:if>
 
-                    <c:if test="${comment.commentWriter == sessionScope.loginId}">
+                    <c:if test="${comment.commentWriter == sessionScope.loginId}"> <%-- 본인이 쓴 댓글만 삭제할수 있게 처리 --%>
                         <td><button onclick="commentDelete('${comment.id}')">삭제</button></td>
                     </c:if>
 
@@ -113,14 +113,14 @@
         const cContents = $("#commentContents").val();
         const boardId = '${board.id}';
         $.ajax({
-            type: "post",
-            url: "/comment/save",
-            data: {
+            type: "post", <%-- Mapping 타입 get 이냐 post 인가  --%>
+            url: "/comment/save",  <%-- url 의미 주소값 --%>
+            data: { <%-- 서버로 넘겨줄 파라미터 --%>
                 "commentWriter": cWriter,
                 "commentContents": cContents,
                 "boardId": boardId
             },
-            dataType: "json",
+            dataType: "json", <%-- 데이터 타입 : json  --%>
             success: function (result) {
                 console.log(result);
                 let output = "<table class='table'>";
@@ -167,10 +167,10 @@
     const commentDelete = (id) => {
         const boardId = '${board.id}';
         $.ajax({
-            type: "get",
-            url: "/comment/delete",
-            data: {"id": id, "boardId": boardId},
-            dataType: "json",
+            type: "get", <%-- Mapping 타입 get 이냐 post 인가  --%>
+            url: "/comment/delete", <%-- url 의미 주소값 --%>
+            data: {"id": id, "boardId": boardId}, <%-- 서버로 넘겨줄 파라미터 --%>
+            dataType: "json", <%-- 데이터 타입 : json  --%>
             success: function (result) {
                 console.log(result);
                 let output = "<table class='table'>";
@@ -181,6 +181,7 @@
                 output += "<th>댓글삭제</th></tr>";
                 for(let i in result){
                     output += "<tr>";
+
                     output += "<td>"+result[i].id+"</td>";
                     output += "<td>"+result[i].commentWriter+"</td>";
                     output += "<td>"+result[i].commentContents+"</td>";

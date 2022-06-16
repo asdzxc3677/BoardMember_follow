@@ -69,7 +69,7 @@ public class BoardController {
         return "boardPages/passwordCheck";
     }
 
-    @GetMapping("/delete") //글 삭제 처리
+    @GetMapping("/delete") //글 삭제(댓글삭제 포함) 처리
     public String delete(@RequestParam("id") Long id){
         boardService.delete(id);
         return "boardPages/pagingList";

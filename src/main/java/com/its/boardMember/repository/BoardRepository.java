@@ -28,15 +28,15 @@ public class BoardRepository {
 
     public int boardCount() { // 전체 페이지수 및 페이지번호
         return sql.selectOne("Board.count");
-    }
+    } // 전체 페이지수 및 페이지번호
 
     public void updateHits(Long id) { // 조회수증가
         sql.update("Board.updateHits",id);
-    }
+    } //조회수 증가
 
     public BoardDTO findById(Long id) { //상세정보 보기
         return sql.selectOne("Board.findById",id);
-    }
+    } // 상세정보 가져오기
 
     public void delete(Long id) { //글삭제
         sql.delete("Board.delete",id);

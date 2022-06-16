@@ -45,7 +45,7 @@ public class BoardRepository {
 
     public void update(BoardDTO boardDTO) { //글수정
         sql.update("Board.update",boardDTO);
-    }
+    }  //글수정처리
 
     public List<BoardDTO> search(Map<String, String> searchParam) { //검색처리
         return sql.selectList("Board.search",searchParam);

@@ -77,7 +77,7 @@ public class BoardService {
 
     public void update(BoardDTO boardDTO) { //수정처리
     boardRepository.update(boardDTO);
-    }
+    }  //글수정처리
 
     public List<BoardDTO> search(String searchType, String q) { //검색처리
         Map<String,String> searchParam = new HashMap<>();

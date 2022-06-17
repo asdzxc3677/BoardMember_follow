@@ -19,6 +19,11 @@
         <input type="text" name="memberPassword" placeholder="비번">
         <input type="submit" value="로그인">
     </form>
-
+<style>
+    body{
+        background-image: url("/resources/img/15-60.jpg");
+        background-size: cover;
+    }
+</style>
 </body>
 </html>

@@ -19,6 +19,14 @@
 <c:if test="${sessionScope.loginId ==null}">
 <a href ="/member/save-form">슨상 회원가입 하쇼잉</a><br>
 </c:if>
+<style>
+    body {
+        background-image: url("/resources/img/l_2020050101000105200003241.webp" );
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+</style>
 
 </body>
 </html>

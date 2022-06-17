@@ -24,7 +24,9 @@
                 <th>Id</th>
                 <th>Pw</th>
                 <th>Name</th>
-                <th>Age</th>
+                <th>Birth</th>
+                <th>Email</th>
+                <th>Phone</th>
                 <th>Phone</th>
                 <th>Datail(ajax)</th>
                 <th>Delete</th>
@@ -35,7 +37,9 @@
                     <td>${member.memberId}</td>
                     <td>${member.memberPassword}</td>
                     <td>${member.memberName}</td>
-                    <td>${member.memberAge}</td>
+                    <td>${member.memberBirth}</td>
+                    <td>${member.memberGender}</td>
+                    <td>${member.memberEmail}</td>
                     <td>${member.memberPhone}</td>
                     <td><button class="btn btn-outline-info" onclick="detailByAjax('${member.id}')">조회</button></td>
                     <td><a href="/member/delete?id=${member.id}">추방</a></td>
@@ -60,7 +64,7 @@
                 let output = "<table class='table'>";
                 output += "<tr>" +
                     "<th>회원번호</th> <th>아이디</th> <th>비번</th> <th>이름</th>" +
-                    "<th>나이</th> <th>폰번호</th>" +
+                    "<th>생년월일</th> <th>성별</th> <th>이메일</th> <th>폰번호</th>" +
                     "</tr>";
                 output += "<tr>";
                 output += "<tr>";
@@ -68,7 +72,9 @@
                 output += "<td>" + result.memberId            + "</td>";
                 output += "<td>" + result.memberPassword      + "</td>";
                 output += "<td>" + result.memberName          + "</td>";
-                output += "<td>" + result.memberAge           + "</td>";
+                output += "<td>" + result.memberBirth         + "</td>";
+                output += "<td>" + result.memberGender        + "</td>";
+                output += "<td>" + result.memberEmail         + "</td>";
                 output += "<td>" + result.memberPhone         + "</td>";
                 output += "</tr>";
                 output += "</table>";

@@ -34,12 +34,12 @@ public class BoardController {
         return "redirect:/board/paging";
     }
 
-    @GetMapping("/findAll") //글목록
-    public String findAll(Model model) {
-        List<BoardDTO> boardDTOList = boardService.findAll();
-        model.addAttribute("boardList", boardDTOList);
-        return "boardPages/list";
-    }
+//    @GetMapping("/findAll") //글목록
+//    public String findAll(Model model) {
+//        List<BoardDTO> boardDTOList = boardService.findAll();
+//        model.addAttribute("boardList", boardDTOList);
+//        return "boardPages/list";
+//    }
 
     @GetMapping("/paging")  //페이징 처리
     public String paging(@RequestParam(value = "page", required = false, defaultValue = "1") int page, Model model) {

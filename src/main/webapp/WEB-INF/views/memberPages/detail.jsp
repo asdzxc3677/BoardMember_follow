@@ -45,6 +45,13 @@
     </table>
     <div id="detail"></div>
 </div>
+
+<style>
+    body{
+        background-image: url("/resources/img/2019101401000385200022682.jpg");
+        background-size: cover;
+    }
+</style>
 </body>
 <script>
     function update() { <%-- 개인 회원수정 처리--%>

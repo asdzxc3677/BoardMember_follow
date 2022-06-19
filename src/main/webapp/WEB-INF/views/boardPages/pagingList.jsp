@@ -101,6 +101,11 @@
         </c:choose>
     </ul>
 </div>
-
+<style>
+    body{
+        background-image: url("/resources/img/15-60.jpg");
+        background-size: cover;
+    }
+</style>
 </body>
 </html>

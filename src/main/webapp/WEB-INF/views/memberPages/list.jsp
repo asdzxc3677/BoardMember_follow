@@ -50,6 +50,12 @@
 
         </div>
     </div>
+<style>
+    body{
+        background-image: url("/resources/img/thumb.jpg");
+        background-size: cover;
+    }
+</style>
 </body>
 <script>
     const detailByAjax = (id) => { <%-- ajax 상세조회 --%>

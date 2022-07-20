@@ -19,7 +19,7 @@
     계정:<input type="text" name="memberId" value="${updateMember.memberId}" readonly><br>
     비번:<input type="text" name="memberPassword" id="pwConfirm" placeholder="비번입력하라쇼잉~"><br>
     이름:<input type="text" name="memberName" value="${updateMember.memberName}"><br>
-    나이:<input type="text" name="memberAge" value="${updateMember.memberAge}"><br>
+    나이:<input type="text" name="memberAge" value="${updateMember.memberBirth}"><br>
     전화번호:<input type="text" name="memberPhone" value="${updateMember.memberPhone}">
     <input class="btn btn-primary" type="button" onclick="memberUpdate()" value="정보수정">
 

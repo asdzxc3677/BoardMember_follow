@@ -32,7 +32,7 @@
         <form action ="/member/save" method="post">
             <input type="text" class="form-control mb-2" onblur="duplicateCheck()" id="memberId" name="memberId" placeholder="아이디"><br>
             <p id="dup-check-result"></p> <!-- 아이디 중복체크-->
-            <input type="password" class="form-control mb-2" onblur="passCheck()" id="Password" name="memberPassword" placeholder="비번"><br>
+            <input type="password" class="form-control mb-2" onblur="passCheck()" id="password" name="memberPassword" placeholder="비번"><br>
             <p id="pw-check-result"></p> <%-- 비밀번호 확인 alert 형태로  추가함  --%>
             <input type="password" class="form-control mb-2" onblur="passCheck()" id="passwordCheck" placeholder="비번확인"><br>
 
@@ -80,7 +80,7 @@
         });
     }
     const passCheck = () =>{ <%-- 비밀번호 alert 형태로 확인 문법 추가함  --%>
-        const memberPassword = document.getElementById("Password").value;
+        const memberPassword = document.getElementById("password").value;
         const passCheck = document.getElementById("passwordCheck").value;
         const checkResult = document.getElementById("pw-check-result");
         if (memberPassword.length < 3){

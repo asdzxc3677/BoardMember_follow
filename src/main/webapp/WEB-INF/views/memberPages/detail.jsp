@@ -30,24 +30,28 @@
             <th>정보수정</th>
             <th>삭제</th>
         </tr>
-            <tr>
-                <td>${member.id}</td>
-                <td>${member.memberId}</td>
-                <td>${member.memberPassword}</td>
-                <td>${member.memberName}</td>
-                <td>${member.memberBirth}</td>
-                <td>${member.memberGender}</td>
-                <td>${member.memberEmail}</td>
-                <td>${member.memberPhone}</td>
-                <td><button class="btn btn-outline-info" onclick="update()">정보수정</button></td>
-                <td><button class="btn btn-primary" id="delete" onclick="deleteMember()">탈주</button></td>
-            </tr>
+        <tr>
+            <td>${member.id}</td>
+            <td>${member.memberId}</td>
+            <td>${member.memberPassword}</td>
+            <td>${member.memberName}</td>
+            <td>${member.memberBirth}</td>
+            <td>${member.memberGender}</td>
+            <td>${member.memberEmail}</td>
+            <td>${member.memberPhone}</td>
+            <td>
+                <button class="btn btn-outline-info" onclick="update()">정보수정</button>
+            </td>
+            <td>
+                <button class="btn btn-primary" id="delete" onclick="deleteMember()">탈주</button>
+            </td>
+        </tr>
     </table>
     <div id="detail"></div>
 </div>
 
 <style>
-    body{
+    body {
         background-image: url("/resources/img/2019101401000385200022682.jpg");
         background-size: cover;
     }
@@ -55,15 +59,17 @@
 </body>
 <script>
     function update() { <%-- 개인 회원수정 처리--%>
-        location.href="/member/update-form"
+        location.href = "/member/update-form"
     }
-    function deleteMember(){ <%-- 개인 회원탈퇴 할때 확인용도 처리 --%>
-        let result = confirm("진짜로 갈끄냐잉") <%--confirm 확인창 띄어준다 메서드 --%>
+
+    function deleteMember() { <%-- 개인 회원탈퇴 할때 확인용도 처리 --%>
+        let result = confirm("진짜로 갈끄냐잉")
+        <%--confirm 확인창 띄어준다 메서드 --%>
         const memberId = "${member.id}";
-        if (result){
-            location.href="/member/delete?id=" + memberId;
+        if (result) {
+            location.href = "/member/delete?id=" + memberId;
             alert("슨상 언제든 다시오쇼 언제든 열려 있으니께")
-        }else {
+        } else {
             alert("잘 선택했소 슨상")
         }
     }

@@ -164,7 +164,7 @@
     const findAll = () => {
         location.href = "/board/findAll";
     }
-    const commentDelete = (id) => {
+    const commentDelete = (id) => {  //댓글삭제
         const boardId = '${board.id}';
         $.ajax({
             type: "get", <%-- Mapping 타입 get 이냐 post 인가  --%>

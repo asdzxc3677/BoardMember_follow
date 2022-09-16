@@ -3,9 +3,10 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="Member">
-    <insert id="save" parameterType="member">
-        insert into member_follow(memberId,memberPassword,memberName,memberBirth,memberGender,memberEmail,memberPhone)
-            values (#{memberId},#{memberPassword},#{memberName},#{memberBirth},#{memberGender},#{memberEmail},#{memberPhone})
+
+    <insert id="insertMember" parameterType="member">
+        insert into member2(member_id,korean_name,english_name,chinese_name,tech_level,reg_no1,reg_no2,birth_dt,year,phone_num, profile_img)
+            values (#{memberId},#{korName},#{engName},#{chinaName},#{techLevel},#{regNo1},#{regNo2},#{birthDate},#{year},#{phoneNum},#{profileImg})
     </insert>
 
     <select id="duplicate" parameterType="String" resultType="String">

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class MemberRepository {
@@ -13,31 +14,40 @@ public class MemberRepository {
     @Autowired
     private SqlSessionTemplate sql;
 
-    public int save(MemberDTO memberDTO) {
-        return sql.insert("Member.save",memberDTO);
-    } //회원가입
-
-    public String duplicateCheck(String memberId) { // 아이디 중복체크
-        return sql.selectOne("Member.duplicate",memberId);
-    } //아이디 중복체크
-
-    public MemberDTO login(MemberDTO memberDTO) {
-        return sql.selectOne("Member.login",memberDTO);
-    } //로그인
+    public void insertMember(MemberDTO memberDTO) {
+        sql.insert("Member.insertMember", memberDTO);
+    } //사원등록
 
     public List<MemberDTO> findAll() {
-        return sql.selectList("Member.findAll");
-    } //관리자용 회원정보
-
-    public MemberDTO findById(Long id) {
-        return sql.selectOne("Member.findById",id);
-    } // ajax로 처리된 상세조회
-
-    public int delete(Long id) {
-        return sql.delete("Member.delete",id);
+        return sql.selectList("Board.findAll");
     }
 
-    public int update(MemberDTO memberDTO) {
-        return sql.update("Member.update",memberDTO);
+    public List<MemberDTO> pagingList(Map<String, Integer> pagingParam) { // 페이징리스트(글목록)
+        return sql.selectList("Board.pagingList",pagingParam);
+    }
+
+    public int boardCount() { // 전체 페이지수 및 페이지번호
+        return sql.selectOne("Board.count");
+    } // 전체 페이지수 및 페이지번호
+
+    public void updateHits(Long id) { // 조회수증가
+        sql.update("Board.updateHits",id);
+    } //조회수 증가
+
+    public MemberDTO findById(Long id) { //상세정보 보기
+        return sql.selectOne("Board.findById",id);
+    } // 상세정보 가져오기
+
+    public void delete(Long id) { //글삭제
+        sql.delete("Board.delete",id);
+    } //글 삭제(댓글삭제 포함)
+
+
+    public void update(MemberDTO memberDTO) { //글수정
+        sql.update("Board.update", memberDTO);
+    }  //글수정처리
+
+    public List<MemberDTO> search(Map<String, String> searchParam) { //검색처리
+        return sql.selectList("Board.search",searchParam);
     }
 }

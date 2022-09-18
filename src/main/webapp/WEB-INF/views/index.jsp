@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 </head>
 <body>
-    <a href="/main/member/findAll">리스트 화면</a>
-    <a href="/main/member/memberReg">등록 화면</a>
+    <a href="/member/list">리스트 화면</a>
+    <a href="/member/memberReg">등록 화면</a>
 </body>
 </html>

@@ -20,24 +20,25 @@
 <div class="container">
     <h2 class="display-4 fw-normal">사원등록 페이지</h2>
     <div class="py-5 text-center">
-        <input class="form-control mb-2" id="memberReg_korName" type="text" placeholder="한글이름"><br>
-        <input class="form-control mb-2" id="memberReg_engName" type="text" placeholder="영문이름"><br>
-        <input class="form-control mb-2" id="memberReg_chinaName" type="text" placeholder="한문이름"><br>
-        <select id="memberReg_techLevel">
-            <option value="A">초급</option>
-            <option value="B">중급</option>
-            <option value="C">고급</option>
-        </select>
-        <input class="form-control mb-2" id="memberReg_regNo1" type="text" placeholder="주민등록번호 앞자리">
-        <input class="form-control mb-2" id="memberReg_regNo2"type="text" placeholder="주민등록번호 뒷자리"><br>
-        <input class="form-control mb-2" id="memberReg_birthDate" type="text" placeholder="생년월일"><br>
-        <input class="form-control mb-2" id="memberReg_year" type="text" placeholder="연차"><br>
-        <input class="form-control mb-2" id="memberReg_phoneNum" type="text" placeholder="연락처"><br>
-        첨부파일:<input type="file" id="memberReg_profileImg">
-        <input type="hidden" id="profileImg" />
-        <div class="photo"><img src="" alt=""></div>
-        <input class="btn btn-primary" type="submit" id="memberReg_saveBtn" value="저장">
-        <br>
+        <form action="/member/insertMember" method="post" id="memberForm" enctype="multipart/form-data">
+            <input class="form-control mb-2" name="korName" type="text" placeholder="한글이름"><br>
+            <input class="form-control mb-2" name="engName" type="text" placeholder="영문이름"><br>
+            <input class="form-control mb-2" name="chinaName" type="text" placeholder="한문이름"><br>
+            <select name="techLevel">
+                <option value="A">초급</option>
+                <option value="B">중급</option>
+                <option value="C">고급</option>
+            </select>
+            <input class="form-control mb-2" name="regNo1" type="text" placeholder="주민등록번호 앞자리">
+            <input class="form-control mb-2" name="regNo2"type="text" placeholder="주민등록번호 뒷자리"><br>
+            <input class="form-control mb-2" name="birthDate" type="text" placeholder="생년월일"><br>
+            <input class="form-control mb-2" name="year" type="text" placeholder="연차"><br>
+            <input class="form-control mb-2" name="phoneNum" type="text" placeholder="연락처"><br>
+            첨부파일:<input type="file" name="profileImg">
+            <div class="photo"><img src="" alt=""></div>
+            <input class="btn btn-primary" type="submit" id="memberReg_saveBtn" value="저장">
+            <br>
+        </form>
     </div>
 </div>
 </body>

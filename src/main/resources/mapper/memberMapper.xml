@@ -9,29 +9,22 @@
             values (#{memberId},#{korName},#{engName},#{chinaName},#{techLevel},#{regNo1},#{regNo2},#{birthDate},#{year},#{phoneNum},#{profileImg})
     </insert>
 
-    <select id="duplicate" parameterType="String" resultType="String">
-        select distinct memberId from member_follow where memberId=#{memberId}
+    <select id="selectMemberListCount" resultType="Integer">
+        select count(*) from member2
     </select>
 
-    <select id="login" parameterType="member" resultType="member">
-        select * from member_follow where memberId=#{memberId} and memberPassword=#{memberPassword}
+    <select id="selectMemberList" parameterType="page" resultType="member">
+        select member_id as memberId,
+               korean_name as korName,
+               english_name as engName,
+               chinese_name as chinaName,
+               tech_level as techLevel,
+               reg_no1 as regNo1,
+               reg_no2 as regNo2,
+               birth_dt as birthDate,
+               year,
+               phone_num as phoneNum,
+               profile_img as profileImg
+        from member2 limit #{page}, #{limit}
     </select>
-
-    <select id="findAll" resultType="member">
-        select * from member_follow
-    </select>
-
-    <select id="findById" parameterType="Long" resultType="member">
-        select * from member_follow where id=#{id}
-    </select>
-
-    <delete id="delete" parameterType="Long">
-        delete from member_follow where id=#{id}
-    </delete>
-
-    <update id="update" parameterType="member">
-        update member_follow set memberName=#{memberName},memberEmail=#{memberEmail},memberPhone=#{memberPhone} where id=#{id}
-    </update>
-
-
 </mapper>
